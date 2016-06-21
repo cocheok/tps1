@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Agenda de turnos</title>
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <!-- bootstrap 3.0.2 -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- font Awesome -->
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <!-- Ionicons -->
+        <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
+        <!-- Morris chart -->
+        <link href="css/morris/morris.css" rel="stylesheet" type="text/css" />
+        <!-- jvectormap -->
+        <link href="css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+        <!-- fullCalendar -->
+        <link href="css/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />
+        <link href="css/fullcalendar/fullcalendar.print.css" rel="stylesheet" type="text/css" media='print' />
+
+        <!-- Daterange picker -->
+        <link href="css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+        <!-- bootstrap wysihtml5 - text editor -->
+        <link href="css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
+        <!-- Theme style -->
+        <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body class="skin-blue">
+        <!-- header logo: style can be found in header.less -->
+        <header class="header">
+            <a href="index.html" class="logo">
+                <!-- Add the class icon to your logo image or logo icon to add the margining -->
+                Belleza & Bienestar
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+
+            </nav>
+        </header>
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li>
+                            <a id="veragenda">
+                                <i class="fa fa-calendar"></i> <span>Agenda</span>
+                            </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-bars"></i>
+                                <span>Tratamientos</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Nuevo</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Ver</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Modificar</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-bars"></i> <span>Clientes</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Nuevo</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Ver</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Modificar</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-bars"></i> <span>Profesionales</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Nuevo</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Ver</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Cancelar</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-bars"></i> <span>Promociones</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Nueva</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Ver</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Modificar</a></li>
+								<li><a href="#"><i class="fa fa-angle-double-right"></i> Baja</a></li>
+                            </ul>
+						</li>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-bars"></i> <span>Tarifas</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Nuevo</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Ver</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Cancelar</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+
+            <aside class="right-side main">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        Seminario de Integración Profesional 1
+
+                    </h1>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <!-- Small boxes (Stat box) -->
+
+                </section><!-- /.content -->
+
+            </aside><!-- /.right-side -->
+
+            <aside class="right-side agenda">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        Agenda
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+                        <li class="active">Agenda</li>
+                    </ol>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h4 class="box-title">Lista de Tratamientos</h4>
+                                </div>
+                                <div class="box-body">
+                                    <!-- the events -->
+                                    <div id='external-events'>
+
+                                        <div class='external-event bg-blue'>Maquillaje</div>
+                                        <div class='external-event bg-red'>Tratamiento de Acné</div>
+                                        <div class='external-event bg-aqua'>Termoterapia</div>
+                                        <div class='external-event bg-yellow'>Electroterapia</div>
+
+                                    </div>
+                                </div><!-- /.box-body -->
+                            </div><!-- /. box -->
+                            <div class="box box-primary creartamiento">
+                                <div class="box-header">
+                                    <h3 class="box-title">Crear Tratamiento</h3>
+                                </div>
+                                <div class="box-body">
+                                    <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                                        <button type="button" id="color-chooser-btn" class="btn btn-danger btn-block btn-sm dropdown-toggle" data-toggle="dropdown">Color <span class="caret"></span></button>
+                                        <ul class="dropdown-menu" id="color-chooser">
+                                            <li><a class="text-green" href="#"><i class="fa fa-square"></i> Green</a></li>
+                                            <li><a class="text-blue" href="#"><i class="fa fa-square"></i> Blue</a></li>
+                                            <li><a class="text-navy" href="#"><i class="fa fa-square"></i> Navy</a></li>
+                                            <li><a class="text-yellow" href="#"><i class="fa fa-square"></i> Yellow</a></li>
+                                            <li><a class="text-orange" href="#"><i class="fa fa-square"></i> Orange</a></li>
+                                            <li><a class="text-aqua" href="#"><i class="fa fa-square"></i> Aqua</a></li>
+                                            <li><a class="text-red" href="#"><i class="fa fa-square"></i> Red</a></li>
+                                            <li><a class="text-fuchsia" href="#"><i class="fa fa-square"></i> Fuchsia</a></li>
+                                            <li><a class="text-purple" href="#"><i class="fa fa-square"></i> Purple</a></li>
+                                        </ul>
+                                    </div><!-- /btn-group -->
+                                    <div class="input-group">
+
+                                        <input id="new-event" type="text" class="form-control" placeholder="Nombre">
+
+                                    </div><!-- /input-group -->
+                                    <div class="input-group-btn">
+                                        <button id="add-new-event" type="button" class="btn btn-default btn-flat">Crear</button>
+                                    </div><!-- /btn-group -->
+
+                                </div>
+                            </div>
+                        </div><!-- /.col -->
+                        <div class="col-md-9">
+                            <div class="box box-primary">
+                                <div class="box-body no-padding">
+                                    <!-- THE CALENDAR -->
+                                    <div id="calendar"></div>
+                                </div><!-- /.box-body -->
+                            </div><!-- /. box -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+
+
+                </section><!-- /.content -->
+            </aside><!-- /.right-side -->
+
+        </div><!-- ./wrapper -->
+
+        <!-- add new calendar event modal -->
+
+
+        <!-- jQuery 2.0.2 -->
+        <script src="js/jquery.min.js"></script>
+        <!-- jQuery UI 1.10.3 -->
+        <script src="js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+        <!-- Bootstrap -->
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <!-- Morris.js charts -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <script src="js/plugins/morris/morris.min.js" type="text/javascript"></script>
+        <!-- Sparkline -->
+        <script src="js/plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
+        <!-- jvectormap -->
+        <script src="js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
+        <script src="js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
+        <!-- fullCalendar -->
+        <script src="js/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+        <!-- jQuery Knob Chart -->
+        <script src="js/plugins/jqueryKnob/jquery.knob.js" type="text/javascript"></script>
+        <!-- daterangepicker -->
+        <script src="js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+        <!-- Bootstrap WYSIHTML5 -->
+        <script src="js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
+        <!-- iCheck -->
+        <script src="js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+
+        <!-- AdminLTE App -->
+        <script src="js/AdminLTE/app.js" type="text/javascript"></script>
+
+
+
+        <!-- Agenda -->
+        <!-- Page specific script -->
+        <script type="text/javascript">
+            $(function() {
+
+                /* initialize the external events
+                 -----------------------------------------------------------------*/
+                function ini_events(ele) {
+                    ele.each(function() {
+
+                        // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+                        // it doesn't need to have a start or end
+                        var eventObject = {
+                            title: $.trim($(this).text()) // use the element's text as the event title
+                        };
+
+                        // store the Event Object in the DOM element so we can get to it later
+                        $(this).data('eventObject', eventObject);
+
+                        // make the event draggable using jQuery UI
+                        $(this).draggable({
+                            zIndex: 1070,
+                            revert: true, // will cause the event to go back to its
+                            revertDuration: 0  //  original position after the drag
+                        });
+
+                    });
+                }
+                ini_events($('#external-events div.external-event'));
+
+                /* initialize the calendar
+                 -----------------------------------------------------------------*/
+                //Date for the calendar events (dummy data)
+                var date = new Date();
+                var d = date.getDate(),
+                        m = date.getMonth(),
+                        y = date.getFullYear();
+                $('#calendar').fullCalendar({
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,agendaWeek,agendaDay'
+                    },
+                    buttonText: {//This is to add icons to the visible buttons
+                        prev: "<span class='fa fa-caret-left'></span>",
+                        next: "<span class='fa fa-caret-right'></span>",
+                        today: 'today',
+                        month: 'month',
+                        week: 'week',
+                        day: 'day'
+                    },
+                    //Random default events
+                    events: [
+                        {
+                            title: 'Maquillaje',
+                            start: new Date(y, m, d, 10, 30),
+                            allDay: false,
+                            backgroundColor: "#0073b7", //Blue
+                            borderColor: "#0073b7" //Blue
+                        }
+
+                    ],
+                    editable: true,
+                    droppable: true, // this allows things to be dropped onto the calendar !!!
+                    drop: function(date, allDay) { // this function is called when something is dropped
+
+                        // retrieve the dropped element's stored Event Object
+                        var originalEventObject = $(this).data('eventObject');
+
+                        // we need to copy it, so that multiple events don't have a reference to the same object
+                        var copiedEventObject = $.extend({}, originalEventObject);
+
+                        var turn  = {
+                             title: "Crear Turno",
+                             message: "Mensaje",
+                             acceptButtonTitle: "OK",
+                             declineButtonTitle: "Cancelar turno",
+                             appendedElement: $('body'),
+                             href:"#"
+                        };
+
+                        addturn(turn);
+
+                        // assign it the date that was reported
+                        copiedEventObject.start = date;
+                        copiedEventObject.allDay = allDay;
+                        copiedEventObject.backgroundColor = $(this).css("background-color");
+                        copiedEventObject.borderColor = $(this).css("border-color");
+
+                        // render the event on the calendar
+                        // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+                        $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+
+                        // is the "remove after drop" checkbox checked?
+                        if ($('#drop-remove').is(':checked')) {
+                            // if so, remove the element from the "Draggable Events" list
+                            $(this).remove();
+                        }
+
+                    }
+                });
+
+                /* ADDING EVENTS */
+                var currColor = "#f56954"; //Red by default
+                //Color chooser button
+                var colorChooser = $("#color-chooser-btn");
+                $("#color-chooser > li > a").click(function(e) {
+                    e.preventDefault();
+                    //Save color
+                    currColor = $(this).css("color");
+                    //Add color effect to button
+                    colorChooser
+                            .css({"background-color": currColor, "border-color": currColor})
+                            .html($(this).text()+' <span class="caret"></span>');
+                });
+                $("#add-new-event").click(function(e) {
+                    e.preventDefault();
+                    //Get value and make sure it is not null
+                    var val = $("#new-event").val();
+                    if (val.length == 0) {
+                        return;
+                    }
+
+                    //Create event
+                    var event = $("<div />");
+                    event.css({"background-color": currColor, "border-color": currColor, "color": "#fff"}).addClass("external-event");
+                    event.html(val);
+                    $('#external-events').prepend(event);
+
+                    //Add draggable funtionality
+                    ini_events(event);
+
+                    //Remove event from text input
+                    $("#new-event").val("");
+                });
+            });
+
+
+            function addturn(data) {
+                if (!$('#dataConfirmModal').length) {
+                    data.appendedElement.append('<div id="dataConfirmModal" class="modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title" id="dataConfirmLabel">Crear Turno</h3></div><div class="modal-body"> </div><div class="modal-footer" align="center"> <a type="button" class="btn btn-default" id="bfirst"></a> <a type="button" class="btn btn-danger" data-dismiss="modal" id="dataConfirmDecline"><span id="declineButtonTitle"></span></a> <a type="button" class="btn btn-success" id="dataConfirmOK"><span id="acceptButtonTitle"></span></a></div></div></div></div>');
+
+                    var especialistas = '<label for="especialista">Especialista:</label> ' +
+                            '<select class="form-control" id="especialista"> ' +
+                            ' <option>1</option> '+
+                            ' <option>2</option>' +
+                            '<option>3</option> ' +
+                            '<option>4</option>' +
+                            '</select> ';
+
+                    var clientes = '<label for="cliente">Cliente:</label> ' +
+                            '<select class="form-control" id="cliente"> ' +
+                            ' <option>1</option> '+
+                            ' <option>2</option>' +
+                            '<option>3</option> ' +
+                            '<option>4</option>' +
+                            '</select> ';
+
+
+                    var horario = '<div class="form-group"> ' +
+                            ' <label for="horario">Horario:</label> '+
+                            ' <input type="time" class="form-control" id="horario"> '+
+                            ' </div>';
+
+
+                    $('#dataConfirmModal').find('.modal-body').append(especialistas);
+                    $('#dataConfirmModal').find('.modal-body').append(clientes);
+                    //$('#dataConfirmModal').find('.modal-body').append(horario);
+
+                }
+                $('#acceptButtonTitle').text(data.acceptButtonTitle);
+                $('#declineButtonTitle').text(data.declineButtonTitle);
+
+
+                $('#dataConfirmOK').attr('href', data.href);
+                $('#dataConfirmModal').modal({backdrop: 'static', keyboard: false, show: true});
+                $('#dataConfirmModal').find('#bfirst').hide();
+
+
+                $('#dataConfirmOK').click(function () {
+                    var esp = $('#especialista').val();
+                    var cli = $('#cliente').val();
+                    $('#dataConfirmModal').modal('toggle');
+
+                });
+
+
+            }
+            function pleaseWait() {
+
+                var pleaseWaitDiv = $('<div class="modal hide" id="pleaseWaitDialog" data-backdrop="static" data-keyboard="false"><div class="modal-header"><h1>Processing...</h1></div><div class="modal-body"><div class="bar" style="width: 100%;"></div></div></div></div>');
+                return {
+                    showPleaseWait: function () {
+                        pleaseWaitDiv.modal();
+                    },
+                    hidePleaseWait: function () {
+                        pleaseWaitDiv.modal('hide');
+                    },
+                };
+            }
+
+
+        </script>
+
+
+    </body>
+</html>
