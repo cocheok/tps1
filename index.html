@@ -399,22 +399,23 @@
 
             function addturn(data) {
                 if (!$('#dataConfirmModal').length) {
+                    alert('AAA');
                     data.appendedElement.append('<div id="dataConfirmModal" class="modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h4 class="modal-title" id="dataConfirmLabel">Crear Turno</h3></div><div class="modal-body"> </div><div class="modal-footer" align="center"> <a type="button" class="btn btn-default" id="bfirst"></a> <a type="button" class="btn btn-danger" data-dismiss="modal" id="dataConfirmDecline"><span id="declineButtonTitle"></span></a> <a type="button" class="btn btn-success" id="dataConfirmOK"><span id="acceptButtonTitle"></span></a></div></div></div></div>');
 
                     var especialistas = '<label for="especialista">Especialista:</label> ' +
                             '<select class="form-control" id="especialista"> ' +
-                            ' <option>1</option> '+
-                            ' <option>2</option>' +
-                            '<option>3</option> ' +
-                            '<option>4</option>' +
+                            ' <option>Dr. Juan Perez</option> '+
+                            ' <option>Dr. Hernesto Gonsalez</option>' +
+                            '<option>Dr. Federico Hererra</option> ' +
+                            '<option>Dr. Juan Lopez</option>' +
                             '</select> ';
 
                     var clientes = '<label for="cliente">Cliente:</label> ' +
                             '<select class="form-control" id="cliente"> ' +
-                            ' <option>1</option> '+
-                            ' <option>2</option>' +
-                            '<option>3</option> ' +
-                            '<option>4</option>' +
+                            ' <option>José M. Berretta Moreno</option> '+
+                            ' <option>Martin Pliego</option>' +
+                            '<option>Agustin Fagani</option> ' +
+                            '<option>Emilio Mollo</option>' +
                             '</select> ';
 
 
@@ -434,14 +435,14 @@
 
 
                 $('#dataConfirmOK').attr('href', data.href);
-                $('#dataConfirmModal').modal({backdrop: 'static', keyboard: false, show: true});
+                $('#dataConfirmModal').modal('show');
                 $('#dataConfirmModal').find('#bfirst').hide();
-
 
                 $('#dataConfirmOK').click(function () {
                     var esp = $('#especialista').val();
                     var cli = $('#cliente').val();
-                    $('#dataConfirmModal').modal('toggle');
+                    $('#dataConfirmModal').modal('hide');
+
 
                 });
 
