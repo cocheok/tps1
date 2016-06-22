@@ -3408,3 +3408,18 @@ fieldset[disabled] .btn-vk.active {
 .agenda {
   display: none;
 }
+
+.right-side > .content-header > .save-btn {
+  float: right;
+  background: green;
+  margin-top: 0px;
+  margin-bottom: 0;
+  font-size: 18px;
+  padding: 7px 5px;
+  position: absolute;
+  top: 4px;
+  right: 50%;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
